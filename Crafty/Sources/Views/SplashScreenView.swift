@@ -4,7 +4,7 @@ struct SplashScreenView: View {
     var body: some View {
         ZStack {
             Color.accentColor
-            Image("craftyLogoTransparent")
+            Image(.CRAFTY_LOGO)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)
