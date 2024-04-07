@@ -71,12 +71,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		634D638D2BC302B700238A2B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				636092402BC2F9FC0073C481 /* Preview Content */,
+				634D63952BC3031900238A2B /* Localization */,
+				6360923E2BC2F9FC0073C481 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		634D638F2BC302D200238A2B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		634D63902BC302DE00238A2B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		634D63912BC302E600238A2B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		634D63922BC302F200238A2B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		634D63932BC302FD00238A2B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		634D63942BC3030800238A2B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		634D63952BC3031900238A2B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		634D63962BC3035E00238A2B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6360924A2BC2F9FC0073C481 /* CraftyTests */,
+				636092542BC2F9FD0073C481 /* CraftyUITests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		634D63972BC3037200238A2B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				634D63932BC302FD00238A2B /* Services */,
+				634D63922BC302F200238A2B /* ViewModels */,
+				634D63912BC302E600238A2B /* Models */,
+				634D63902BC302DE00238A2B /* Views */,
+				634D638F2BC302D200238A2B /* ViewControllers */,
+				634D63942BC3030800238A2B /* Utilities */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		6360922E2BC2F9FA0073C481 = {
 			isa = PBXGroup;
 			children = (
 				636092392BC2F9FA0073C481 /* Crafty */,
-				6360924A2BC2F9FC0073C481 /* CraftyTests */,
-				636092542BC2F9FD0073C481 /* CraftyUITests */,
 				636092382BC2F9FA0073C481 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,10 +173,11 @@
 		636092392BC2F9FA0073C481 /* Crafty */ = {
 			isa = PBXGroup;
 			children = (
+				634D63972BC3037200238A2B /* Sources */,
+				634D63962BC3035E00238A2B /* Tests */,
+				634D638D2BC302B700238A2B /* Resources */,
 				6360923A2BC2F9FA0073C481 /* CraftyApp.swift */,
 				6360923C2BC2F9FA0073C481 /* ContentView.swift */,
-				6360923E2BC2F9FC0073C481 /* Assets.xcassets */,
-				636092402BC2F9FC0073C481 /* Preview Content */,
 			);
 			path = Crafty;
 			sourceTree = "<group>";
@@ -421,7 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Crafty/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Crafty/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = A3B4349HTD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -450,7 +530,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Crafty/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Crafty/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = A3B4349HTD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
