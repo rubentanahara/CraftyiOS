@@ -15,17 +15,21 @@ struct ContentView: View {
     }
     
     var body: some View {
-        if isActive {
-            mainTabView
-        } else {
-            SplashScreenView()
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + ANIMATION_DELAY) {
-                        withAnimation(.easeOut(duration: ANIMATION_DURATION)) {
-                            isActive = true
-                        }
-                    }
-                }
+        ZStack {
+            Color.accentColor.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            
+            //        if isActive {
+            OnboardingView()
+            //        } else {
+            //            SplashView()
+            //                .onAppear {
+            //                    DispatchQueue.main.asyncAfter(deadline: .now() + ANIMATION_DELAY) {
+            //                        withAnimation(.easeOut(duration: ANIMATION_DURATION)) {
+            //                            isActive = true
+            //                        }
+            //                    }
+            //                }
+            //        }
         }
     }
     
@@ -53,17 +57,9 @@ struct HomeView: View {
     }
 }
 
-struct OnBoardingView: View {
-    var body: some View {
-        Text("Onboarding...")
-            .padding()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
-
 struct ProfileView: View {
     var body: some View {
-        Text("Profile screen")
+        Text("Profile View")
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -73,5 +69,7 @@ struct ProfileView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        
+        
     }
 }

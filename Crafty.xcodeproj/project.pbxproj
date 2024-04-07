@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		634D63992BC305A200238A2B /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D63982BC305A200238A2B /* SplashScreenView.swift */; };
+		634D63992BC305A200238A2B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D63982BC305A200238A2B /* SplashView.swift */; };
 		634D639C2BC3147200238A2B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D639B2BC3147200238A2B /* Image.swift */; };
+		634D639E2BC31D7D00238A2B /* OnboardingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D639D2BC31D7D00238A2B /* OnboardingContent.swift */; };
+		634D63A22BC323AF00238A2B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D63A12BC323AF00238A2B /* OnboardingView.swift */; };
+		634D63A52BC3263E00238A2B /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D63A42BC3263E00238A2B /* OnboardingModel.swift */; };
 		6360923B2BC2F9FA0073C481 /* CraftyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6360923A2BC2F9FA0073C481 /* CraftyApp.swift */; };
 		6360923D2BC2F9FA0073C481 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6360923C2BC2F9FA0073C481 /* ContentView.swift */; };
 		6360923F2BC2F9FC0073C481 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6360923E2BC2F9FC0073C481 /* Assets.xcassets */; };
@@ -36,8 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		634D63982BC305A200238A2B /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		634D63982BC305A200238A2B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		634D639B2BC3147200238A2B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		634D639D2BC31D7D00238A2B /* OnboardingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContent.swift; sourceTree = "<group>"; };
+		634D63A12BC323AF00238A2B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		634D63A42BC3263E00238A2B /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		636092372BC2F9FA0073C481 /* Crafty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crafty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6360923A2BC2F9FA0073C481 /* CraftyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftyApp.swift; sourceTree = "<group>"; };
 		6360923C2BC2F9FA0073C481 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,7 +101,8 @@
 		634D63902BC302DE00238A2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				634D63982BC305A200238A2B /* SplashScreenView.swift */,
+				634D63A02BC31E0E00238A2B /* OnboardingView */,
+				634D639F2BC31DE600238A2B /* SplashView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 		634D63922BC302F200238A2B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				634D63A32BC3262800238A2B /* OnboardingModel */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -164,6 +172,31 @@
 				634D639B2BC3147200238A2B /* Image.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		634D639F2BC31DE600238A2B /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				634D63982BC305A200238A2B /* SplashView.swift */,
+			);
+			path = SplashView;
+			sourceTree = "<group>";
+		};
+		634D63A02BC31E0E00238A2B /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				634D639D2BC31D7D00238A2B /* OnboardingContent.swift */,
+				634D63A12BC323AF00238A2B /* OnboardingView.swift */,
+			);
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
+		634D63A32BC3262800238A2B /* OnboardingModel */ = {
+			isa = PBXGroup;
+			children = (
+				634D63A42BC3263E00238A2B /* OnboardingModel.swift */,
+			);
+			path = OnboardingModel;
 			sourceTree = "<group>";
 		};
 		6360922E2BC2F9FA0073C481 = {
@@ -351,9 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				634D63992BC305A200238A2B /* SplashScreenView.swift in Sources */,
+				634D63992BC305A200238A2B /* SplashView.swift in Sources */,
 				634D639C2BC3147200238A2B /* Image.swift in Sources */,
 				6360923D2BC2F9FA0073C481 /* ContentView.swift in Sources */,
+				634D63A22BC323AF00238A2B /* OnboardingView.swift in Sources */,
+				634D63A52BC3263E00238A2B /* OnboardingModel.swift in Sources */,
+				634D639E2BC31D7D00238A2B /* OnboardingContent.swift in Sources */,
 				6360923B2BC2F9FA0073C481 /* CraftyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

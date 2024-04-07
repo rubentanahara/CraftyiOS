@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SplashScreenView: View {
+struct SplashView: View {
     var body: some View {
         ZStack {
             Color.accentColor
@@ -14,6 +14,6 @@ struct SplashScreenView: View {
 
 struct SplashScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreenView()
+        SplashView()
     }
 }
