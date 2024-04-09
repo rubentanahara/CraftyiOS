@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isActive = false
+    @State private var isSplashDone = false
     @State private var selectedView = 0
-    @State private var isOnBoarding = true
+    @ObservedObject private var appState = AppState()
     
     private let ANIMATION_DELAY = 3.0
     private let ANIMATION_DURATION = 1.5
@@ -18,18 +18,21 @@ struct ContentView: View {
         ZStack {
             Color.accentColor.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             
-            //        if isActive {
-            OnboardingView()
-            //        } else {
-            //            SplashView()
-            //                .onAppear {
-            //                    DispatchQueue.main.asyncAfter(deadline: .now() + ANIMATION_DELAY) {
-            //                        withAnimation(.easeOut(duration: ANIMATION_DURATION)) {
-            //                            isActive = true
-            //                        }
-            //                    }
-            //                }
-            //        }
+            if !isSplashDone {
+                SplashView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + ANIMATION_DELAY) {
+                            withAnimation(.easeOut(duration: ANIMATION_DURATION)) {
+                                isSplashDone = true
+                            }
+                        }
+                    }
+                
+            } else if appState.isOnboardingDone {
+                Text("login")
+            } else {
+                OnboardingView().environmentObject(appState)
+            }
         }
     }
     
