@@ -14,7 +14,6 @@ struct OnboardingView: View {
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
-            //            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             
             if selectedIndex == (viewModel.onboardingPages.count - 1) {
                 CustomButton(props: Props(title: "Get started", action: {

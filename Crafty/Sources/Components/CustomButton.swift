@@ -11,13 +11,13 @@ struct Props {
     var cornerRadius: CGFloat
     var borderColor: Color
     var borderWidth: CGFloat
-
+    
     init(title: String,
          action: @escaping () -> Void = {},
          titleColor: Color = .white,
          fontSize: CGFloat = 16,
          width: CGFloat? = nil,
-         height: CGFloat = 50,
+         height: CGFloat = 40,
          backgroundColor: Color = Color.accentColor,
          cornerRadius: CGFloat = 8,
          borderColor: Color = .clear,
@@ -37,25 +37,20 @@ struct Props {
 
 struct CustomButton: View {
     let props: Props
-
+    
     var body: some View {
         Button(action: props.action) {
-            ZStack {
-                RoundedRectangle(cornerRadius: props.cornerRadius)
-                    .fill(props.backgroundColor)
-                    .frame(width: props.width, height: props.height)
-                    .border(props.borderColor, width: props.borderWidth)
-
-                Text(props.title)
-                    .foregroundColor(props.titleColor)
-                    .font(.system(size: props.fontSize))
-            }
+            Text(props.title)
+                .foregroundColor(props.titleColor)
+                .font(.system(size: props.fontSize, weight: .semibold))
+                .frame(maxWidth: props.width ?? .infinity,maxHeight: props.height)
+                .background(RoundedRectangle(cornerRadius: props.cornerRadius)
+                    .fill(props.backgroundColor))
+                    .overlay(RoundedRectangle(cornerRadius: props.cornerRadius)
+                    .stroke(props.borderColor, lineWidth: props.borderWidth))
         }
-        .frame(width: props.width, height: props.height)
-        .cornerRadius(props.cornerRadius)
     }
 }
-
 // Preview
 struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
