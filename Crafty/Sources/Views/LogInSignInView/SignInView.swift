@@ -64,10 +64,10 @@ struct SignInView: View {
                 titleColor: Color.BLACK_PRIMARY,
                 fontSize: 14.0,
                 backgroundColor: Color.GRAY_QUARTERY))
-        
+            
+            Text("By signing up, you agree to Crafty’s Terms of Use & Privacy Policy").font(.system(size: 10))
+                .foregroundStyle(Color.BLACK_PRIMARY)
         }.padding(.horizontal,25)
-       
-       
     }
 }
 
