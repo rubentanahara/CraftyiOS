@@ -1,42 +1,20 @@
 import SwiftUI
 
-struct Props {
-    let title: String
-    var action: () -> Void
-    var titleColor: Color
-    var fontSize: CGFloat
-    var width: CGFloat?
-    var height: CGFloat
-    var backgroundColor: Color
-    var cornerRadius: CGFloat
-    var borderColor: Color
-    var borderWidth: CGFloat
-    
-    init(title: String,
-         action: @escaping () -> Void = {},
-         titleColor: Color = .white,
-         fontSize: CGFloat = 16,
-         width: CGFloat? = nil,
-         height: CGFloat = 40,
-         backgroundColor: Color = Color.accentColor,
-         cornerRadius: CGFloat = 8,
-         borderColor: Color = .clear,
-         borderWidth: CGFloat = 0) {
-        self.title = title
-        self.action = action
-        self.titleColor = titleColor
-        self.fontSize = fontSize
-        self.width = width
-        self.height = height
-        self.backgroundColor = backgroundColor
-        self.cornerRadius = cornerRadius
-        self.borderColor = borderColor
-        self.borderWidth = borderWidth
-    }
+struct CustomButtonProps {
+    var title: String = "title"
+    var action: () -> Void = {}
+    var titleColor: Color = Color.WHITE_PRIMARY
+    var fontSize: CGFloat = 16
+    var width: CGFloat? = nil
+    var height: CGFloat = 40
+    var backgroundColor: Color = Color.accentColor
+    var cornerRadius: CGFloat = 8
+    var borderColor: Color = .clear
+    var borderWidth: CGFloat = 0
 }
 
 struct CustomButton: View {
-    let props: Props
+    let props: CustomButtonProps
     
     var body: some View {
         Button(action: props.action) {
@@ -46,20 +24,13 @@ struct CustomButton: View {
                 .frame(maxWidth: props.width ?? .infinity,maxHeight: props.height)
                 .background(RoundedRectangle(cornerRadius: props.cornerRadius)
                     .fill(props.backgroundColor))
-                    .overlay(RoundedRectangle(cornerRadius: props.cornerRadius)
+                .overlay(RoundedRectangle(cornerRadius: props.cornerRadius)
                     .stroke(props.borderColor, lineWidth: props.borderWidth))
         }
     }
 }
-// Preview
-struct CustomButton_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomButton(props: Props(
-            title: "Transparent Button",
-            action: {
-                // Action for the button
-                print("Transparent Button Tapped")
-            }
-        ))
-    }
+
+#Preview {
+    CustomButton(props: CustomButtonProps())
 }
+

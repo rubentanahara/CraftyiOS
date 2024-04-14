@@ -4,6 +4,7 @@ struct CustomTextFieldProps {
     var label: String
     var placeholder: String
     var text: Binding<String>
+    var isSecure = false
     var fontSize: CGFloat = 14
     var textColor: Color = Color.BLACK_PRIMARY
     var placeholderColor: Color = Color.GRAY_TERTIARY
@@ -22,20 +23,32 @@ struct CustomTextField: View {
             Text(props.label)
                 .font(.system(size: props.fontSize))
                 .foregroundColor(props.textColor)
-            TextField(props.placeholder, text: props.text)
-                .font(.system(size: props.fontSize))
-                .padding(.horizontal)
-                .padding(.vertical, props.padding)
-                .frame(height: 40)
-                .background(props.backgroundColor)
-                .overlay(RoundedRectangle(cornerRadius: props.cornerRadius)
-                            .stroke(props.borderColor, lineWidth: props.borderWidth))
-                .cornerRadius(props.cornerRadius)
+            if props.isSecure {
+                SecureField(props.placeholder, text: props.text)
+                    .font(.system(size: props.fontSize))
+                    .padding(.horizontal)
+                    .padding(.vertical, props.padding)
+                    .frame(height: 40)
+                    .background(props.backgroundColor)
+                    .overlay(RoundedRectangle(cornerRadius: props.cornerRadius)
+                                .stroke(props.borderColor, lineWidth: props.borderWidth))
+                    .cornerRadius(props.cornerRadius)
+            } else {
+                TextField(props.placeholder, text: props.text)
+                    .font(.system(size: props.fontSize))
+                    .padding(.horizontal)
+                    .padding(.vertical, props.padding)
+                    .frame(height: 40)
+                    .background(props.backgroundColor)
+                    .overlay(RoundedRectangle(cornerRadius: props.cornerRadius)
+                                .stroke(props.borderColor, lineWidth: props.borderWidth))
+                    .cornerRadius(props.cornerRadius)
+            }
+            
         }
         .frame(maxWidth: .infinity)
     }
 }
-
 
 struct CustomTextField_Previews: PreviewProvider {
     @State static var previewText = ""
@@ -45,6 +58,15 @@ struct CustomTextField_Previews: PreviewProvider {
             label: "Email or Username",
             placeholder: "Enter your email or username",
             text: $previewText
+        ))
+        .padding()
+        .previewLayout(.sizeThatFits)
+        
+        CustomTextField(props: CustomTextFieldProps(
+            label: "Email or Username",
+            placeholder: "Enter your email or username",
+            text: $previewText,
+            isSecure: true
         ))
         .padding()
         .previewLayout(.sizeThatFits)

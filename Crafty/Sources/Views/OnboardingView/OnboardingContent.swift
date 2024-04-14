@@ -19,8 +19,6 @@ struct OnboardingContent: View {
     
     var body: some View {
         VStack {
-            
-            
             Image(name: page.imageName)
                 .resizable()
                 .scaledToFit()
@@ -31,8 +29,7 @@ struct OnboardingContent: View {
                     .repeatForever(autoreverses: true),
                     value: isAnimating)
                 .opacity(isAnimating ? 1 : 0)
-           
-            
+
             Text(page.title)
                 .font(.system(size: 24, weight: .bold))
                 .multilineTextAlignment(.center)
@@ -46,7 +43,6 @@ struct OnboardingContent: View {
                 .padding(.top)
                 .padding(.horizontal)
                 .opacity(isAnimating ? 1 : 0)
-            
         }
         .foregroundColor(Color("WHITE_SECONDARY"))
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
